@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\TesteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,14 +35,7 @@ Route::prefix('/app')->group(function () {
     Route::get('/produtos', function(){return 'produtos';})->name('app.produtos');
 });
 
-Route::get('/rota1', function (){
-    echo 'vc esta na rota 1';
-})->name('site.rota1');
-
-Route::get('/rota2', function (){
-    return redirect()->route('site.rota1');
-})->name('site.rota2');
-// Route::redirect('rota2', 'rota1');
+Route::get('/teste/{x}/{y}', [TesteController::class, 'teste'])->name('teste');
 
 Route::fallback( function(){
     echo 'A pagina que você esta tentando acessar não exite. <a href="'.route('site.index').'">Clique aqui</a> rotornar a Home!';
