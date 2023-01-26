@@ -104,15 +104,20 @@
                     /*
                             comentário de varias linhas
                         */
-                    echo '<hr>teset de echo com php puro';
+                    echo '<hr>tese de echo com php puro';
                 @endphp
                 @if(count($fornecedores) == 0)
-                    <p>nada cadastrado</p>
-                @elseif(count($fornecedores) > 1 )
-                    <p>1 cadastro</p>
+                    <p>Entrada no IF</p>
+                @elseif(count($fornecedores) == 1 )
+                    <p>Entrada no ELSEIF</p>
                 @else
-                    <p>2 cadastros ou mais</p>
+                    <p>Enrada no ELSE</p>
                 @endif
+                
+                @unless(count($fornecedores) == 0)
+                    <p>@@unless: Retorno se a contagem for diferente de 0. Contagem atual:{{ count($fornecedores) }}</p>
+                @endunless
+
             </div>
         </div>
     </div>
