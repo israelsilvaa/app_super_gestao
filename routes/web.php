@@ -34,13 +34,15 @@ Route::prefix('/app')->group(function () {
     Route::get('/produtos', function(){return 'produtos';})->name('app.produtos');
 });
 
-
 Route::get('/rota1', function (){
     echo 'vc esta na rota 1';
 })->name('site.rota1');
 
-// Route::redirect('rota2', 'rota1');
-
 Route::get('/rota2', function (){
     return redirect()->route('site.rota1');
 })->name('site.rota2');
+// Route::redirect('rota2', 'rota1');
+
+Route::fallback( function(){
+    echo 'A pagina que você esta tentando acessar não exite. <a href="'.route('site.index').'">Clique aqui</a> rotornar a Home!';
+});
