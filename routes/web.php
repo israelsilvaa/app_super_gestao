@@ -35,7 +35,7 @@ Route::prefix('/app')->group(function () {
     Route::get('/produtos', function(){return 'produtos';})->name('app.produtos');
 });
 
-Route::get('/teste/{x}/{y}', [TesteController::class, 'teste'])->name('teste');
+Route::get('/teste/{x}/{y}', [TesteController::class, 'teste'])->name('site.teste');
 
 Route::fallback( function(){
     echo 'A pagina que você esta tentando acessar não exite. <a href="'.route('site.index').'">Clique aqui</a> rotornar a Home!';
