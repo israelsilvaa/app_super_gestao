@@ -5,6 +5,8 @@ use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\TesteController;
+use App\Http\Controllers\FornecedoresController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +33,7 @@ Route::get('/login', function(){return 'login';})->name('site.login');
 
 Route::prefix('/app')->group(function () {
     Route::get('/clientes',function(){return 'clientes';})->name('app.clientes');
-    Route::get('/fornecedores', function(){return 'fornecedores';})->name('app.fornecedores');
+    Route::get('/fornecedor', [FornecedoresController::class, 'index'])->name('app.fornecedor');
     Route::get('/produtos', function(){return 'produtos';})->name('app.produtos');
 });
 

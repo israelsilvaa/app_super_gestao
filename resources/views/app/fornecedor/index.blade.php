@@ -85,19 +85,25 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    PRINCIPAL
+                    fornecedores
                 </div>
-
                 <div class="links">
-                    <a href="{{ Route('site.index')}}"><span class="red"> Home(principal)</span></a>  
-                    <a href="{{ Route('site.sobre-nos')}}">Sobre nos</a>
-                    <a href="{{ Route('site.contatos')}}">contatos</a>
-                    <a href="{{ Route('app.fornecedor')}}">forn</a>
-                    
-                </div>
-                <div>
-                    <p>Olá, vc está na home :)</p>
-                </div>
+                    <a href="{{ Route('site.index') }}"> Home(principal) </a>
+                    <a href="{{ Route('site.sobre-nos') }}"><span class="red"> Sobre Nos </span></a>
+                    <a href="{{ Route('site.contatos') }}">contatos</a>
+                    <br><hr>{{ 'teste com chaves'}}
+                    <hr>
+                    <?= 'teste com tag curta de impressão' ?>
+                    {{-- comentario BLADE --}}
+                    @php
+                        // comentário nativo php
+                        
+                        /*
+                            comentário de varias linhas
+                        */
+                        echo '<hr>teset de echo com php puro';
+                    @endphp
+                </div>                
             </div>
         </div>
     </body>
