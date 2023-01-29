@@ -29,6 +29,11 @@ Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.so
 Route::get('/contatos', [ContatoController::class, 'contatos'])->name('site.contatos');
 Route::get('/login', function(){return 'login';})->name('site.login');
 
+
+Route::prefix('/curso')->group(function () {
+    Route::get('/modulo', [ModuloController::class, 'moduloView'])->name('curso.modulo');
+});
+
 Route::prefix('/app')->group(function () {
     Route::get('/clientes',function(){return 'clientes';})->name('app.clientes');
     Route::get('/fornecedores', function(){return 'fornecedores';})->name('app.fornecedores');
