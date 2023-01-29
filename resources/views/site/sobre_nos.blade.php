@@ -1,13 +1,13 @@
 @extends('layouts.main')
 
-@section('title', 'Sobre nós')
+@section('title', 'Sobre')
 
 @section('content')
 
-
-
-<div>
-    <p>teste de dobre nos com layouts</p>
-</div>
+    <div class="container text-center">
+        <div>
+            <p>aqui vamos falar algo sobre nos</p>
+        </div>
+    </div>
 
 @endsection

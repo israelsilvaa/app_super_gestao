@@ -5,6 +5,7 @@ use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\TesteController;
+use App\Http\Controllers\ModuloController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,9 @@ Route::get('/login', function(){return 'login';})->name('site.login');
 
 
 Route::prefix('/curso')->group(function () {
-    Route::get('/modulo', [ModuloController::class, 'moduloView'])->name('curso.modulo');
+    Route::get('/modulo', [ModuloController::class, 'view'])->name('curso.modulos');
+    Route::get('/aula46', [ModuloController::class, 'aula46'])->name('curso.aula46');
+
 });
 
 Route::prefix('/app')->group(function () {

@@ -18,35 +18,40 @@
 </head>
 
 <body class="bg bg-dark text-light">
+
     <div class="flex-center position-ref full-height">
         <div class="content">
-            <div class="title m-b-md">
-                <span class="titulosite">
-                    @yield('title')
-                </span>
+          
+            <div class="content">
+                <h2>@yield('title')</h2>
             </div>
-            <div class="links">
-                <a href="{{ Route('site.index') }}">Home</a>
-                <a href="{{ Route('site.sobre-nos') }}">Sobre</a>
-                <a href="{{ Route('curso.modulos') }}">Modulos</a>
-            </div>
+          
             <div class="bot-modulos">
                 @yield('content')
             </div>
+
+            <div class="btn_voltar">
+                <button class="btn btn-success">
+                    <a href="{{ Route('curso.modulos') }}">Modulos</a>
+                </button>
+            </div>
+        
         </div>
     </div>
 
+    <div class="flex-center">
+        <footer class="content">
+            <p class="red2">Super Gestão &copy; 2023</p>
+        </footer>
+    </div>
 
-    <footer class="content">
-        <p class="red2">Super Gestão &copy; 2023</p>
-    </footer>
+
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
-
 </body>
 
 </html>

@@ -4,6 +4,6 @@
 
 @section('content')
 
-    
+    <p>Curso feito na plataforma <a class="udemy"href="https://www.udemy.com/">Udemy</a></p>
 
 @endsection
