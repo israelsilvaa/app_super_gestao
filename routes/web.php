@@ -17,7 +17,7 @@ use App\Http\Controllers\ModuloController;
 |
 */
 
-// Verbo Http.
+// Verbos Http.
 // get
 // put 
 // post
