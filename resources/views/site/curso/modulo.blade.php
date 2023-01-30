@@ -76,6 +76,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{{Route('curso.aula46')}}">aula 46</a></li>
                   <li><a class="dropdown-item" href="{{Route('curso.aula47')}}">aula 47</a></li>
+                  <li><a class="dropdown-item" href="{{Route('curso.aula48')}}">aula 48</a></li>
                 </ul>
             </div>
             <div class="btn-group">

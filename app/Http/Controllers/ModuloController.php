@@ -29,8 +29,23 @@ class ModuloController extends Controller
                 'nome' => 'marcelo'
                 ]
         ];
-        
         return view('site.curso.aulas.aula47', compact('array'));
+    }
+
+    public function aula48(){
+        $array = [
+            0 => [
+                'carro' => 'nissan',
+                'nome' => 'caio',
+                'dinheiro' => '01'
+            ],
+            1 => [
+                'carro' => 'supra',
+                'nome' => 'marcelo',
+                'dinheiro' => ''
+                ]
+        ];
+        return view('site.curso.aulas.aula48', compact('array'));
     }
 
 
