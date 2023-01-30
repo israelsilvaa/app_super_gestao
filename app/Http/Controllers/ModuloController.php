@@ -17,5 +17,21 @@ class ModuloController extends Controller
         return view('site.curso.aulas.aula46', compact('fornecedores'));
     }
 
+    public function aula47(){
+        $array = [
+            0 => [
+                'carro' => 'nissan',
+                'nome' => 'caio',
+                'dinheiro' => 'R$ 30.200'
+            ],
+            1 => [
+                'carro' => 'supra',
+                'nome' => 'marcelo'
+                ]
+        ];
+        
+        return view('site.curso.aulas.aula47', compact('array'));
+    }
+
 
 }
