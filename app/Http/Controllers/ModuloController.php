@@ -53,12 +53,12 @@ class ModuloController extends Controller
             0 => [
                 'carro' => 'nissan',
                 'nome' => 'caio',
-                'dinheiro' => '01'
+                'dinheiro' => '0'
             ],
             1 => [
                 'carro' => 'supra',
                 'nome' => 'marcelo',
-                'dinheiro' => ''
+                'dinheiro' => null
                 ]
         ];
         $msg = empty($array[0]['dinheiro']) ? 'foi informado': 'não informado'; 
