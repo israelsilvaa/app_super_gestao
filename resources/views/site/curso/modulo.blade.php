@@ -74,9 +74,10 @@
                     modulo 7
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{Route('curso.aula46')}}">aula 46</a></li>
-                  <li><a class="dropdown-item" href="{{Route('curso.aula47')}}">aula 47</a></li>
-                  <li><a class="dropdown-item" href="{{Route('curso.aula48')}}">aula 48</a></li>
+                  <li><a class="dropdown-item" href="{{Route('curso.aula46')}}">aula 46-if/else</a></li>
+                  <li><a class="dropdown-item" href="{{Route('curso.aula47')}}">aula 47-Isset()</a></li>
+                  <li><a class="dropdown-item" href="{{Route('curso.aula48')}}">aula 48-Empty()</a></li>
+                  <li><a class="dropdown-item" href="{{Route('curso.aula49')}}">aula 49-Opera. Ternário</a></li>
                 </ul>
             </div>
             <div class="btn-group">

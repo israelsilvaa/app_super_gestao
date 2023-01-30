@@ -48,5 +48,22 @@ class ModuloController extends Controller
         return view('site.curso.aulas.aula48', compact('array'));
     }
 
+    public function aula49(){
+        $array = [
+            0 => [
+                'carro' => 'nissan',
+                'nome' => 'caio',
+                'dinheiro' => '01'
+            ],
+            1 => [
+                'carro' => 'supra',
+                'nome' => 'marcelo',
+                'dinheiro' => ''
+                ]
+        ];
+        $msg = empty($array[0]['dinheiro']) ? 'foi informado': 'não informado'; 
+        return view('site.curso.aulas.aula49', compact('array', 'msg'));
+    }
+
 
 }
