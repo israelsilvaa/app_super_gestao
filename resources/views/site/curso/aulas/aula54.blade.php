@@ -1,16 +1,20 @@
 @extends('layouts.aula')
 
-@section('title', 'aula54')
+@section('title', 'aula - 54')
 
 @section('content')
-    
 
-    <h3>aula 54 - Operador condicional de valor Default(??)</h3>
-    <p>retorna um valor Defalt em duas condições:<br>se não estiver setada ou se não tiver valor </p>
-    @if (isset($array))
-        <p>Carro: {{ $array[1]['nome'] }}</p>
-        <p>Nome: {{ $array[1]['carro'] }}</p>
-        <p>Dinheiro: {{ $array[1]['dinheiro'] ?? 'Dado não preenchido' }}</p>
-    @endif
+    <h3 class="red">@@foreach</h3>
+    <hr>
+    <p>É indicado para varrer arrays, e nesse caso temos um array de arrays.</p>
+    @isset($array)
+        @foreach ($array as $indice => $objeto)
+            <p>Carro: {{ $objeto['nome'] }}</p>
+            <p>Nome: {{ $objeto['carro'] }}</p>
+            <p>Dinheiro: {{ $objeto['dinheiro'] ?? 'Dado não preenchido' }}</p>
+            <p>Telefone: {{ $objeto['ddd'] }} {{ $objeto['telefone'] }}</p>
+            <hr>
+        @endforeach
+    @endisset
 
 @endsection

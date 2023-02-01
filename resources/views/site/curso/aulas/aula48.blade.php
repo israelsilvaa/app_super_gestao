@@ -1,6 +1,6 @@
 @extends('layouts.aula')
 
-@section('title', 'aula48')
+@section('title', 'aula - 48')
 
 @section('content')
 

@@ -1,6 +1,6 @@
 @extends('layouts.aula')
 
-@section('title', 'aula49')
+@section('title', 'aula - 49')
 
 @section('content')
     <h3>Operador condicional ternário</h3>
