@@ -3,14 +3,23 @@
 @section('title', 'aula53')
 
 @section('content')
-    
 
-    <h3>aula 53 - Operador condicional de valor Default(??)</h3>
-    <p>retorna um valor Defalt em duas condições:<br>se não estiver setada ou se não tiver valor </p>
-    @if (isset($array))
-        <p>Carro: {{ $array[1]['nome'] }}</p>
-        <p>Nome: {{ $array[1]['carro'] }}</p>
-        <p>Dinheiro: {{ $array[1]['dinheiro'] ?? 'Dado não preenchido' }}</p>
-    @endif
+
+    <h3 class="red">@@while</h3>
+    <hr>
+    <p>Laço de repetição, excuta até que uma condição seja satisfeita.</p>
+    <P>É necessario usar e declarar antes uma variavel de controle do laço($i = 0)</P>
+    @isset($array)
+
+        @php $i = 0 @endphp
+        @while (isset($array[$i]))
+            <p>Carro: {{ $array[$i]['nome'] }}</p>
+            <p>Nome: {{ $array[$i]['carro'] }}</p>
+            <p>Dinheiro: {{ $array[$i]['dinheiro'] ?? 'Dado não preenchido' }}</p>
+            <p>Telefone: {{ $array[$i]['ddd'] }} {{ $array[$i]['telefone'] }}</p>
+            @php $i++ @endphp
+            <hr>
+        @endwhile
+    @endisset
 
 @endsection
