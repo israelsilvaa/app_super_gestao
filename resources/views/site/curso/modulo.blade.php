@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Modulos')
+@section('title', 'Desenvolvimento Web Avançado com PHP, Laravel e Vue.JS - Modulos')
 
 @section('content')
 
