@@ -40,8 +40,8 @@ Route::prefix('/curso')->group(function () {
     Route::get('/aula52', [ModuloController::class, 'aula52'])->name('curso.aula52');
     Route::get('/aula53', [ModuloController::class, 'aula53'])->name('curso.aula53');
     Route::get('/aula54', [ModuloController::class, 'aula54'])->name('curso.aula54');
+    Route::get('/aula55', [ModuloController::class, 'aula55'])->name('curso.aula55');
     /*
-    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
     Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
     Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
     Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');

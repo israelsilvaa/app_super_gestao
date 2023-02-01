@@ -82,6 +82,7 @@
                   <li><a class="dropdown-item" href="{{Route('curso.aula52')}}">aula 52-@@for</a></li>
                   <li><a class="dropdown-item" href="{{Route('curso.aula53')}}">aula 53-@@while</a></li>
                   <li><a class="dropdown-item" href="{{Route('curso.aula54')}}">aula 54-@@foreach</a></li>
+                  <li><a class="dropdown-item" href="{{Route('curso.aula55')}}">aula 55-@@forelse</a></li>
                 </ul>
             </div>
             <div class="btn-group">

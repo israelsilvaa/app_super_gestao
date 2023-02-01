@@ -180,4 +180,9 @@ class ModuloController extends Controller
         $msg = empty($array[0]['dinheiro']) ? 'foi informado' : 'não informado';
         return view('site.curso.aulas.aula54', compact('array', 'msg'));
     }
+    public function aula55(){
+        $array = [];
+        $msg = empty($array[0]['dinheiro']) ? 'foi informado' : 'não informado';
+        return view('site.curso.aulas.aula55', compact('array', 'msg'));
+    }
 }
