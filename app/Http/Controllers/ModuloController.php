@@ -69,8 +69,7 @@ class ModuloController extends Controller
         $msg = empty($array[0]['dinheiro']) ? 'foi informado' : 'não informado';
         return view('site.curso.aulas.aula49', compact('array', 'msg'));
     }
-    public function aula51()
-    {
+    public function aula51(){
         $array = [
             0 => [
                 'carro' => 'nissan',
@@ -98,9 +97,32 @@ class ModuloController extends Controller
         return view('site.curso.aulas.aula51', compact('array', 'msg'));
     }
 
-    public function aula52()
-    {
-        return view('site.curso.aulas.aula52');
+    public function aula52(){
+        $array = [
+            0 => [
+                'carro' => 'nissan',
+                'nome' => 'caio',
+                'dinheiro' => '0',
+                'ddd' => '11',//são paulo-SP
+                'telefone' => '0000-0000'
+            ],
+            1 => [
+                'carro' => 'supra',
+                'nome' => 'marcelo',
+                'dinheiro' => null,
+                'ddd' => '91',//Belém-PA
+                'telefone' => '1111-1111'
+            ],
+            2 => [
+                'carro' => 'nissan',
+                'nome' => 'caio',
+                'dinheiro' => '0',
+                'ddd' => '32',//juiz de fora-CE
+                'telefone' => '2222-2222'
+            ],
+        ];
+        $msg = empty($array[0]['dinheiro']) ? 'foi informado' : 'não informado';
+        return view('site.curso.aulas.aula52', compact('array', 'msg'));
     }
     public function aula53()
     {
