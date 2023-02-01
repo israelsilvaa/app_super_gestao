@@ -1,106 +1,265 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="pt-br">
+    <head>
+        <title>Super Gestão - Contato</title>
+        <meta charset="utf-8">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                font-family: 'Roboto', sans-serif;
+            }
 
-    <title>Laravel</title>
+            p, span {
+                color: #ffffff;
+            }
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+            h1 {
+                color: #ffffff;
+                font-size: 28px;
+            }
 
-    <!-- Styles -->
-    <style>
-        html,
-        body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
+            h2 {
+                color: #333333;
+                font-size: 22px;
+            }
 
-        .full-height {
-            height: 100vh;
-        }
+            input, select, textarea, button {
+                width: 100%;
+                padding: 10px 15px;
+                margin: 10px 0px 10px 0px;
+                box-sizing: border-box;
+                border-radius: 3px;
+                background-color: transparent;
+                color: #333;
+            }
 
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
+            .texto-branco {
+                color: #ffffff;
+            }
 
-        .position-ref {
-            position: relative;
-        }
+            .borda-branca {
+                border: solid 1px #fff;
+            }
 
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
+            .borda-preta {
+                border: solid 1px #333;
+            }
 
-        .content {
-            text-align: center;
-        }
+            button {
+                background-color: #7ab829;
+                cursor: pointer;
+                color: #fff;
+            }
 
-        .title {
-            font-size: 84px;
-        }
+            button:hover {
+                background-color: #6ea22c;
+            }
 
-        .links>a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
+            ::placeholder {
+                color: #333333;
+                opacity: 1;
+            }
 
-        .m-b-md {
-            margin-bottom: 30px;
-        }
+            :-ms-input-placeholder {
+                color: #333333;
+            }
 
-        .red {
-            color: red;
-        }
-    </style>
-</head>
+            ::-ms-input-placeholder {
+                color: #333333;
+            }
 
-<body>
-    <div class="flex-center position-ref full-height">
-        @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                    <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
+            .topo {
+                width: 100%;
+                background-color: #f8f8f8;
+                position: absolute;
+                padding: 20px 0px 10px 0px;
+            }
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                @endauth
+            .logo {
+                width: 50px;
+                float: left;
+                margin-left: 40px;
+            }
+
+            .menu {
+                float: right;
+                margin-right: 40px;
+            }
+
+            .menu li {
+                display: inline;
+                float: left;
+            }
+
+            .menu ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .menu a {
+                text-decoration: none;
+                padding: 14px 16px;
+                color: #333;
+            }
+
+            .menu a:hover {
+                color: #268fd0;
+            }
+
+            .conteudo-destaque {
+                width: 100%;
+                height: 100%;
+                min-height: 800px; 
+            }
+
+            .esquerda {
+                float:left;
+                background-color: #268fd0;
+                width: 60%;
+                height: 100%;
+            }
+
+            .direita {
+                float:right;
+                background-color: #2a9ee2;
+                width: 40%;
+                height: 100%;
+            }
+
+            .informacoes, .contato {
+                margin: 100px 40px 40px 40px;
+            }
+
+            .contato-principal {
+                margin: 0px 60px 60px 40px;
+            }
+
+            .chamada {
+                margin-top: 30px;
+                margin-left: 20px;
+            }
+
+            .video {
+                margin: 40px;
+            }
+
+            .video img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .conteudo-pagina {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                margin-bottom: 100px;
+            }
+
+            .titulo-pagina {
+                padding: 100px 0px 60px 0px;
+                background-color: #2a9ee2;
+                text-align: center;
+            }
+
+            .informacao-pagina {
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .informacao-pagina p{
+                color: #333;
+            }
+
+            .rodape {
+                width: 100%;
+            }
+
+            .redes-sociais, .area-contato, .localizacao {
+                width: 33.333%;
+                border-top:solid 1px #ccc;
+                float: left;
+                text-align: center;
+                background-color: #f8f8f8;
+                height: 250px;
+            }
+
+            .redes-sociais, .area-contato, .localizacao p, span {
+                color: #333333;
+            }
+
+            .redes-sociais img {
+                margin: 0px 15px 0px 15px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="topo">
+
+            <div class="logo">
+                <img src="img/logo.png">
             </div>
-        @endif
 
-        <div class="content">
-            <div class="title m-b-md">
-                CONTATOS
-            </div>
-
-            <div class="links">
-                <a href="{{ Route('site.index') }}">Home(principal)</a>
-                <a href="{{ Route('site.sobre-nos') }}">Sobre nos</a>
-                <a href="{{ Route('site.contatos') }}"><span class="red"> Contatos </span></a>
-            </div>
-            <div>
-                <p>Email: teste@teste.com <br> Telefone: (091) 3333-8888</p>
+            <div class="menu">
+                <ul>
+                    <li><a href="{{ route('site.index') }}">Principal</a></li>
+                    <li><a href="{{ route('site.sobrenos') }}">Sobre Nós</a></li>
+                    <li><a href="{{ route('site.contato') }}">Contato</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-</body>
 
+        <div class="conteudo-pagina">
+            <div class="titulo-pagina">
+                <h1>Entre em contato conosco</h1>
+            </div>
+
+            <div class="informacao-pagina">
+                <div class="contato-principal">
+                    <form>
+                        <input type="text" placeholder="Nome" class="borda-preta">
+                        <br>
+                        <input type="text" placeholder="Telefone" class="borda-preta">
+                        <br>
+                        <input type="text" placeholder="E-mail" class="borda-preta">
+                        <br>
+                        <select class="borda-preta">
+                            <option value="">Qual o motivo do contato?</option>
+                            <option value="">Dúvida</option>
+                            <option value="">Elogio</option>
+                            <option value="">Reclamação</option>
+                        </select>
+                        <br>
+                        <textarea class="borda-preta">Preencha aqui a sua mensagem</textarea>
+                        <br>
+                        <button type="submit" class="borda-preta">ENVIAR</button>
+                    </form>
+                </div>
+            </div>  
+        </div>
+
+        <div class="rodape">
+            <div class="redes-sociais">
+                <h2>Redes sociais</h2>
+                <img src="img/facebook.png">
+                <img src="img/linkedin.png">
+                <img src="img/youtube.png">
+            </div>
+            <div class="area-contato">
+                <h2>Contato</h2>
+                <span>(11) 3333-4444</span>
+                <br>
+                <span>supergestao@dominio.com.br</span>
+            </div>
+            <div class="localizacao">
+                <h2>Localização</h2>
+                <img src="img/mapa.png">
+            </div>
+        </div>
+    </body>
 </html>
