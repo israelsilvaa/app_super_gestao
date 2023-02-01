@@ -30,7 +30,7 @@
                 <a href="{{ Route('site.sobre_nos') }}">Sobre Nos</a>
                 <a href="{{ Route('site.contato') }}">Contato</a>
                 <a href="{{ Route('curso.modulos') }}">Modulos</a>
-                <a href="/novo">teste</a>
+                
             </div>
             <div class="bot-modulos">
                 @yield('content')

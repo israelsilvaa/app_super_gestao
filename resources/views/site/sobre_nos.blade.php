@@ -232,6 +232,7 @@
                 <img src="img/linkedin.png">
                 <img src="img/youtube.png">
             </div>
+            
             <div class="area-contato">
                 <h2>Contato</h2>
                 <span>(11) 3333-4444</span>

@@ -9,7 +9,5 @@ class PrincipalController extends Controller
     public function index(){
         return view('site.principal');
     }
-    public function novo(){
-        return view('site.teste');
-    }
+    
 }
