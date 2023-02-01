@@ -83,6 +83,7 @@
                   <li><a class="dropdown-item" href="{{Route('curso.aula53')}}">aula 53-@@while</a></li>
                   <li><a class="dropdown-item" href="{{Route('curso.aula54')}}">aula 54-@@foreach</a></li>
                   <li><a class="dropdown-item" href="{{Route('curso.aula55')}}">aula 55-56-@@forelse/escapando chaves</a></li>
+                  <li><a class="dropdown-item" href="{{Route('curso.aula57')}}">aula 57-@@variavel lopp</a></li>
                 </ul>
             </div>
             <div class="btn-group">
