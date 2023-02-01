@@ -30,14 +30,34 @@ Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.so
 Route::get('/contatos', [ContatoController::class, 'contatos'])->name('site.contatos');
 Route::get('/login', function(){return 'login';})->name('site.login');
 
-
 Route::prefix('/curso')->group(function () {
     Route::get('/modulo', [ModuloController::class, 'view'])->name('curso.modulos');
     Route::get('/aula46', [ModuloController::class, 'aula46'])->name('curso.aula46');
     Route::get('/aula47', [ModuloController::class, 'aula47'])->name('curso.aula47');
     Route::get('/aula48', [ModuloController::class, 'aula48'])->name('curso.aula48');
     Route::get('/aula49', [ModuloController::class, 'aula49'])->name('curso.aula49');
-
+    Route::get('/aula51', [ModuloController::class, 'aula51'])->name('curso.aula51');
+    Route::get('/aula52', [ModuloController::class, 'aula52'])->name('curso.aula52');
+    Route::get('/aula53', [ModuloController::class, 'aula53'])->name('curso.aula53');
+    Route::get('/aula54', [ModuloController::class, 'aula54'])->name('curso.aula54');
+    /*
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    Route::get('/aula', [ModuloController::class, 'aula'])->name('curso.aula');
+    */
 });
 
 Route::prefix('/app')->group(function () {
