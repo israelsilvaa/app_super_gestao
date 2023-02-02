@@ -1,106 +1,26 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('site.layouts_site.supergestao')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('title', $titulo)
 
-    <title>Laravel</title>
+@section('content')
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-    <!-- Styles -->
-    <style>
-        html,
-        body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
+    <div class="conteudo-pagina">
+        <div class="titulo-pagina">
+            <h1>Entre em contato conosco</h1>
+        </div>
 
-        .full-height {
-            height: 100vh;
-        }
+        <div class="informacao-pagina">
+            <div class="contato-principal">
+                {{-- por padrão o formulario envia o metodo GET, por isso esse 
+                    parametro poderia ser omitido --}}
 
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
+                @component('site.layouts_site._components.form_contato' , ['classe' => 'borda-preta'])
+                    <p>a nossa equipe analizara a sua mensageme e respondera o mais breve possivel</p>
+                    <p>o tempo medio de resposta da equipe é de 48 horas</p>
+                @endcomponent
 
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links>a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-
-        .red {
-            color: red;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="flex-center position-ref full-height">
-        @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                    <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
-
-        <div class="content">
-            <div class="title m-b-md">
-                CONTATOS
-            </div>
-
-            <div class="links">
-                <a href="{{ Route('site.index') }}">Home(principal)</a>
-                <a href="{{ Route('site.sobre-nos') }}">Sobre nos</a>
-                <a href="{{ Route('site.contatos') }}"><span class="red"> Contatos </span></a>
-            </div>
-            <div>
-                <p>Email: teste@teste.com <br> Telefone: (091) 3333-8888</p>
             </div>
         </div>
     </div>
-</body>
-
-</html>
+@endsection

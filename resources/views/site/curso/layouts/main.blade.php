@@ -26,9 +26,7 @@
                 </span>
             </div>
             <div class="links">
-                <a href="{{ Route('site.index') }}">Home</a>
-                <a href="{{ Route('site.sobre-nos') }}">Sobre</a>
-                <a href="{{ Route('curso.modulos') }}">Modulos</a>
+                <a href="{{ Route('site.index') }}">Projeto Super Gestão</a>
             </div>
             <div class="bot-modulos">
                 @yield('content')
