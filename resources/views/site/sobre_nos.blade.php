@@ -1,6 +1,6 @@
-@extends('layouts.supergestao')
+@extends('site.layouts_site.supergestao')
 
-@section('title', 'Super Gestão - Sobre Nós')
+@section('title', $titulo)
 
 @section('content')
 

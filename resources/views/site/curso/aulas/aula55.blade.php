@@ -1,4 +1,4 @@
-@extends('layouts.aula')
+@extends('site.curso.layouts.aula')
 
 @section('title', 'aula - 55')
 

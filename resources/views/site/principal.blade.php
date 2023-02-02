@@ -1,6 +1,6 @@
-@extends('layouts.supergestaohome')
+@extends('site.layouts_site.supergestaohome')
 
-@section('title', 'Super Gestão - Home')
+@section('title', $titulo)
 
 @section('content')
 
