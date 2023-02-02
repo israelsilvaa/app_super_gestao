@@ -26,7 +26,6 @@ use App\Http\Controllers\ModuloController;
 // options
 
 Route::get('/', [PrincipalController::class, 'index'])->name('site.index');
-
 Route::get('/sobre_nos', [SobreNosController::class, 'sobreNos'])->name('site.sobre_nos');
 Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
 Route::get('/login', function(){return 'login';})->name('site.login');
