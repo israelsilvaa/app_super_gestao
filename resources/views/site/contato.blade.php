@@ -14,10 +14,12 @@
             <div class="contato-principal">
                 {{-- por padrão o formulario envia o metodo GET, por isso esse 
                     parametro poderia ser omitido --}}
-                
-                @component('site.layouts_site._components.form_contato')
+
+                @component('site.layouts_site._components.form_contato' , ['classe' => 'borda-preta'])
+                    <p>a nossa equipe analizara a sua mensageme e respondera o mais breve possivel</p>
+                    <p>o tempo medio de resposta da equipe é de 48 horas</p>
                 @endcomponent
-                
+
             </div>
         </div>
     </div>
