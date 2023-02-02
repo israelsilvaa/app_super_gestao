@@ -14,7 +14,8 @@
             <div class="contato-principal">
                 {{-- por padrão o formulario envia o metodo GET, por isso esse 
                     parametro poderia ser omitido --}}
-                <form action="{{ Route('site.contato') }}" method="GET">
+                <form action="{{ Route('site.contato') }}" method="post">
+                    @csrf
                     <input name="nome" type="text" placeholder="Nome" class="borda-preta">
                     <br>
                     <input name="telefone" type="text" placeholder="Telefone" class="borda-preta">
