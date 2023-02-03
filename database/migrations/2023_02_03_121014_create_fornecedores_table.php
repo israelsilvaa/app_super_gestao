@@ -13,7 +13,7 @@ class CreateFornecedoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('_fornecedores', function (Blueprint $table) {
+        Schema::create('fornecedores', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 50);
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateFornecedoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_fornecedores');
+        Schema::dropIfExists('fornecedores');
     }
 }
