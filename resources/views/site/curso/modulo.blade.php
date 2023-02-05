@@ -95,6 +95,7 @@
                     <li><a class="dropdown-item" href="{{Route('curso.aula74_86')}}">aula 74_86-relacionamentos</a></li>
                     <li><a class="dropdown-item" href="{{Route('curso.aula88')}}">aula 88-Reset/status/refresh/fresh</a></li>
                     <li><a class="dropdown-item" href="{{Route('curso.aula91')}}">aula 91-inser. regist. com tinker</a></li>
+                    <li><a class="dropdown-item" href="{{Route('curso.aula94')}}">aula 94 - tinker all();</a></li>
                 </ul>
             </div>
             <div class="btn-group">
