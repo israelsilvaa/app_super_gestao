@@ -14,6 +14,7 @@
                 #1 No terminal: <br>php artisan tinker<br>
                 #2 instanciar um objeto: <br>$sites = \App\SiteContato::all();<br>
                 OU<br>
+                use \App\SiteContato;<br>
                 $sites = SiteContato::all();<br>
             </p>
         </div>
