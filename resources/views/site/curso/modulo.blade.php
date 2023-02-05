@@ -92,6 +92,7 @@
                     modulo 8
                 </button>
                 <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{Route('curso.aula74_86')}}">aula 74_86-relacionamentos</a></li>
                     <li><a class="dropdown-item" href="{{Route('curso.aula88')}}">aula 88-Reset/status/refresh/fresh</a></li>
                 </ul>
             </div>

@@ -216,4 +216,10 @@ class ModuloController extends Controller
     public function aula88(){
         return view('site.curso.aulas.aula88');
     }
+    
+    public function aula74_86(){
+        return view('site.curso.aulas.aula74_86');
+    }
+
+    
 }
