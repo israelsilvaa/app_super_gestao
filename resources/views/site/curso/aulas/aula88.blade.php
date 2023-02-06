@@ -19,7 +19,7 @@
         <div class="card-header border-info"><h4>status</h4></div>
         <div class="card-body">
             <p class="card-text">
-                mostra todas as migrations no banco, e se já foram executadas ou não.(atalho para: select * from migrations;)
+                mostra todas as migrations no banco, e se já foram executadas ou não.<br>atalho para: select * from migrations;
             </p>
         </div>
     </div>
