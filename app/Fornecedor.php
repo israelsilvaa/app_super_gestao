@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Fornecedor extends Model
 {
+    use SoftDeletes;
     // esse nome sobre põem o nome automático que o ORM Eloquent usa p/ persitir no banco.
     protected $table = "fornecedores";
 
