@@ -28,7 +28,7 @@ use App\Http\Controllers\ModuloController;
 Route::get('/', [PrincipalController::class, 'index'])->name('site.index');
 Route::get('/sobre_nos', [SobreNosController::class, 'sobreNos'])->name('site.sobre_nos');
 Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
-Route::post('/contato', [ContatoController::class, 'contato'])->name('site.contato');
+Route::post('/contato', [ContatoController::class, 'salvar'])->name('site.contato');
 Route::get('/login', function(){return 'login';})->name('site.login');
 
 Route::prefix('/curso')->group(function () {

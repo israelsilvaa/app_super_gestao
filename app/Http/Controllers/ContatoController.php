@@ -9,14 +9,13 @@ class ContatoController extends Controller
 {
     public function contato(Request $request)
     {
-        
-        $contato = new SiteContato();
-        $contato->nome = $request->input('nome');
-        $contato->telefone = $request->input('telefone');
-        $contato->email = $request->input('email');
-        $contato->motivo_contato = $request->input('motivo_contato');
-        $contato->mensagem = $request->input('mensagem');
-        $contato->save();
+        // $contato = new SiteContato();
+        // $contato->nome = $request->input('nome');
+        // $contato->telefone = $request->input('telefone');
+        // $contato->email = $request->input('email');
+        // $contato->motivo_contato = $request->input('motivo_contato');
+        // $contato->mensagem = $request->input('mensagem');
+        // $contato->save();
         
         /*
         // Para utililxar metofo FILL, deves-ser configura-lo no model:
@@ -26,6 +25,19 @@ class ContatoController extends Controller
         $contato->save();
         */
 
-        return view('site.contato', ['titulo' => 'Super Gestão - Contato'])->with('msg', 'Mensagem enviada com sucesso!');
+        return view('site.contato', ['titulo' => 'Super Gestão - Contato']);
+    }
+    public function salvar(Request $request){
+        // realixar a validação dos dados do formulário recebidos no request.
+        $request->validate([
+            'nome' => 'required',
+            'telenofe' => 'required',
+            'email' => 'required',
+            'motivo_contatto' => 'required',
+            'mensagem' => 'required'
+        ]);
+
+        #SiteContato::create($request->all());
+    
     }
 }
