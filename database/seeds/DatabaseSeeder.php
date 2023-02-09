@@ -1,6 +1,5 @@
 <?php
 
-use App\SiteContato;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,5 +14,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $this->call(FornecedorSeeder::class);
         $this->call(SiteContatosSeeder::class);
+        $this->call(LojasSeeder::class);
+
     }
 }
