@@ -36,12 +36,13 @@ class CreateProcessadorDetalhesTable extends Migration
      */
     public function down()
     {
-        // removendo FKs
+        // removendo FK e removendo a coluna apos. 
         Schema::table('processador_detalhes', function(Blueprint $table){
-            $table->dropForeign('processador_id');
+            $table->dropForeign('processador_detalhes_processador_id_foreign');//[table]_[coluna]_foreign
+            $table->dropColumn('processador_id');
         });
 
-        // apagando tabela
+        // apagando tabela processador_id
         Schema::dropIfExists('processador_detalhes');
     }
 }
