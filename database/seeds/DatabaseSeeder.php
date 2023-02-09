@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(FornecedorSeeder::class);
         $this->call(SiteContatosSeeder::class);
         $this->call(LojasSeeder::class);
+        $this->call(MotivoContatoSeeder::class);
 
     }
 }
