@@ -47,7 +47,7 @@ class AlterTableSiteContatosAddFkMotivoContatos extends Migration
 
         // removendo a coluna motivo_contato_id
          Schema::table('site_contatos', function (Blueprint $table) {
-            $table->dropColumn('motivo_contato_id');
+            $table->dropColumn('motivo_contatos_id');
         });
     }
 }

@@ -17,7 +17,7 @@ class SiteContatosSeeder extends Seeder
         $contato->nome = 'caio';
         $contato->telefone = '919888-7777';
         $contato->email = 'caio@teste.com';
-        $contato->motivo_contato = 1;
+        $contato->motivo_contatos_id = 1;
         $contato->mensagem = "teste de mensagem";
         $contato->save();
         */
