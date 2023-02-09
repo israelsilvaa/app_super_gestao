@@ -21,5 +21,5 @@ class SiteContato extends Model
         $contt = SiteContato::where('nome', 'israel')->get();
         $contt = SiteContato::where('nome_coluna', 'operadorLogico' , 'valor')->get();
     */ 
-    protected $fillable = ['nome', 'telefone', 'email', 'motivo_contato', 'mensagem'];
+    protected $fillable = ['nome', 'telefone', 'email', 'motivo_contatos_id', 'mensagem'];
 }
