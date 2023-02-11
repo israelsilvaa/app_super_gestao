@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -16,7 +17,7 @@ class LoginController extends Controller
    {
       // regras de validação
       $regras = [
-         'usuario'=> 'email',
+         'usuario' => 'email',
          'senha' => 'required'
       ];
 
@@ -25,9 +26,26 @@ class LoginController extends Controller
          'usuario.email' => 'informe um email válido',
          'senha.required' => 'o campo senha é obrigatório'
       ];
-
+      // validando dados do form
       $request->validate($regras, $feedback);
 
-      print_r($request->all());
+      // recuperando usuario e senha
+      $usuario = $request->get('usuario');
+      $senha = $request->get('senha');
+      echo 'usuario:' . $usuario . ' Senha:' . $senha;
+
+      // iniciando o model User 
+      $user = new User();
+
+      $existe = $user->where('email', $usuario)->where('password', $senha)->get()->first();
+
+      if(isset($existe->name)){
+         echo 'logado';
+      }else{
+         echo 'usuario não registrado';
+      }
+      echo '<pre>';
+      print_r($existe);
+      echo '<pre>';
    }
 }
