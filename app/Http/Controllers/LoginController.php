@@ -8,9 +8,15 @@ use App\User;
 
 class LoginController extends Controller
 {
-   public function index()
+   public function index(Request $request)
    {
-      return view('site.login', ['titulo' => 'login']);
+      $erro = '';
+
+      if($request->get('erro') == '1'){
+         $erro = 'usuario ou senha não existe.';
+      }
+
+      return view('site.login', ['titulo' => 'login', 'erro'=> $erro]);
    }
 
    public function autenticar(Request $request)
@@ -30,22 +36,20 @@ class LoginController extends Controller
       $request->validate($regras, $feedback);
 
       // recuperando usuario e senha
-      $usuario = $request->get('usuario');
+      $email = $request->get('usuario');
       $senha = $request->get('senha');
-      echo 'usuario:' . $usuario . ' Senha:' . $senha;
+      echo 'usuario:' . $email . ' Senha:' . $senha;
 
       // iniciando o model User 
       $user = new User();
 
-      $existe = $user->where('email', $usuario)->where('password', $senha)->get()->first();
+      $usuario = $user->where('email', $email)->where('password', $senha)->get()->first();
 
-      if(isset($existe->name)){
+      if(isset($usuario->name)){
          echo 'logado';
       }else{
-         echo 'usuario não registrado';
+         return redirect()->route('site.login', ['erro'=> '1']);
       }
-      echo '<pre>';
-      print_r($existe);
-      echo '<pre>';
+
    }
 }

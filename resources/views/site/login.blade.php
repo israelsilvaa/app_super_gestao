@@ -18,6 +18,8 @@
                 <span class="msg-erro">{{ $errors->has('senha') ? $errors->first('senha') : ''}}</span>
                 <button type="submit" class="borda-preta">acessar</button>
             </form>
+            {{isset($erro) && $erro != '' ? $erro: ''}}
+                
         </div>
     </div>
 
