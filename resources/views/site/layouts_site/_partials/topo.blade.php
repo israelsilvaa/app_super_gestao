@@ -10,6 +10,8 @@
             <li><a href="{{ route('site.sobre_nos') }}">Sobre Nós</a></li>
             <li><a href="{{ route('site.contato') }}">Contato</a></li>
             <li><a href="{{ route('curso.modulos') }}">Modulos</a></li>
+            <li><a href="{{ route('site.login') }}">Login</a></li>
+            <li><a href="#">Cadstrar-se</a></li>
         </ul>
     </div>
 </div>
