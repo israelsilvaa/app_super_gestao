@@ -26,12 +26,16 @@ use App\Http\Middleware\LogAcessoMiddleware;
 // delete 
 // options
 
-Route::get('/', [PrincipalController::class, 'index'])
+Route::middleware(LogAcessoMiddleware::class)
+    ->get('/', [PrincipalController::class, 'index'])
     ->name('site.index')
-    ->middleware(LogAcessoMiddleware::class)
 ;
 Route::get('/sobre_nos', [SobreNosController::class, 'sobreNos'])->name('site.sobre_nos');
-Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
+
+Route::middleware(LogAcessoMiddleware::class)
+    ->get('/contato', [ContatoController::class, 'contato'])
+    ->name('site.contato')
+;
 Route::post('/contato', [ContatoController::class, 'salvar'])->name('site.contato');
 Route::get('/login', function(){return 'login';})->name('site.login');
 
