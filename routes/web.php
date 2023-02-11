@@ -7,6 +7,11 @@ use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\ModuloController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\FornecedorController;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +40,11 @@ Route::get('/login/{erro?}', [LoginController::class, 'index'])->name('site.logi
 Route::post('/login', [LoginController::class, 'autenticar'])->name('site.login');
 
 Route::middleware('aut')->prefix('/app')->group(function (){
-    Route::get('/clientes',function(){return 'clientes';})->name('app.clientes');
-    Route::get('/fornecedores', function(){return 'fornecedores';})->name('app.fornecedores');
-    Route::get('/produtos', function(){return 'produtos';})->name('app.produtos');
+    Route::get('/home',[HomeController::class, 'index'])->name('app.home');
+    Route::get('/clientes',[ClienteController::class, 'index'])->name('app.clientes');
+    Route::get('/fornecedores',[FornecedorController::class, 'index'])->name('app.fornecedores');
+    Route::get('/produtos', [ProdutoController::class, 'index'])->name('app.produtos');
+    Route::get('/sair',[LoginController::class, 'sair'])->name('app.sair');
 });
 
 Route::prefix('/curso')->group(function () {
