@@ -33,7 +33,7 @@ Route::get('/contato', [ContatoController::class, 'contato' ])->name('site.conta
 Route::post('/contato', [ContatoController::class, 'salvar'])->name('site.contato');
 Route::get('/login', function(){return 'login';})->name('site.login');
 
-Route::middleware('aut')->prefix('/app')->group(function () {
+Route::middleware('aut:padrao, admin')->prefix('/app')->group(function () {
     Route::get('/clientes',function(){return 'clientes';})->name('app.clientes');
     Route::get('/fornecedores', function(){return 'fornecedores';})->name('app.fornecedores');
     Route::get('/produtos', function(){return 'produtos';})->name('app.produtos');
