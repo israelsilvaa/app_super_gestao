@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\TesteController;
 use App\Http\Controllers\ModuloController;
+
 use App\Http\Middleware\LogAcessoMiddleware;
 /*
 |--------------------------------------------------------------------------
@@ -26,16 +28,9 @@ use App\Http\Middleware\LogAcessoMiddleware;
 // delete 
 // options
 
-Route::middleware(LogAcessoMiddleware::class)
-    ->get('/', [PrincipalController::class, 'index'])
-    ->name('site.index')
-;
+Route::get('/', [PrincipalController::class, 'index'])->name('site.index')->middleware(LogAcessoMiddleware::class);
 Route::get('/sobre_nos', [SobreNosController::class, 'sobreNos'])->name('site.sobre_nos');
-
-Route::middleware(LogAcessoMiddleware::class)
-    ->get('/contato', [ContatoController::class, 'contato'])
-    ->name('site.contato')
-;
+Route::get('/contato', [ContatoController::class, 'contato' ])->name('site.contato')->middleware(LogAcessoMiddleware::class);
 Route::post('/contato', [ContatoController::class, 'salvar'])->name('site.contato');
 Route::get('/login', function(){return 'login';})->name('site.login');
 
