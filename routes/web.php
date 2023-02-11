@@ -6,6 +6,7 @@ use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\TesteController;
 use App\Http\Controllers\ModuloController;
+use App\Http\Middleware\LogAcessoMiddleware;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +26,10 @@ use App\Http\Controllers\ModuloController;
 // delete 
 // options
 
-Route::get('/', [PrincipalController::class, 'index'])->name('site.index');
+Route::get('/', [PrincipalController::class, 'index'])
+    ->name('site.index')
+    ->middleware(LogAcessoMiddleware::class)
+;
 Route::get('/sobre_nos', [SobreNosController::class, 'sobreNos'])->name('site.sobre_nos');
 Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
 Route::post('/contato', [ContatoController::class, 'salvar'])->name('site.contato');
