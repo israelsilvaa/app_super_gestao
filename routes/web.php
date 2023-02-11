@@ -5,10 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\ContatoController;
-use App\Http\Controllers\TesteController;
 use App\Http\Controllers\ModuloController;
 
-use App\Http\Middleware\LogAcessoMiddleware;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,9 +27,9 @@ use App\Http\Middleware\LogAcessoMiddleware;
 // delete 
 // options
 
-Route::get('/', [PrincipalController::class, 'index'])->name('site.index')->middleware(LogAcessoMiddleware::class);
+Route::get('/', [PrincipalController::class, 'index'])->name('site.index');
 Route::get('/sobre_nos', [SobreNosController::class, 'sobreNos'])->name('site.sobre_nos');
-Route::get('/contato', [ContatoController::class, 'contato' ])->name('site.contato')->middleware(LogAcessoMiddleware::class);
+Route::get('/contato', [ContatoController::class, 'contato' ])->name('site.contato');
 Route::post('/contato', [ContatoController::class, 'salvar'])->name('site.contato');
 Route::get('/login', function(){return 'login';})->name('site.login');
 
@@ -69,8 +68,6 @@ Route::prefix('/app')->group(function () {
     Route::get('/fornecedores', function(){return 'fornecedores';})->name('app.fornecedores');
     Route::get('/produtos', function(){return 'produtos';})->name('app.produtos');
 });
-
-Route::get('/teste/{x}/{y}', [TesteController::class, 'teste'])->name('site.teste');
 
 Route::fallback( function(){
     echo 'A pagina que você esta tentando acessar não exite. <a href="'.route('site.index').'">Clique aqui</a> rotornar a Home!';
