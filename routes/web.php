@@ -6,7 +6,7 @@ use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\ModuloController;
-
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +31,10 @@ Route::get('/', [PrincipalController::class, 'index'])->name('site.index');
 Route::get('/sobre_nos', [SobreNosController::class, 'sobreNos'])->name('site.sobre_nos');
 Route::get('/contato', [ContatoController::class, 'contato' ])->name('site.contato');
 Route::post('/contato', [ContatoController::class, 'salvar'])->name('site.contato');
-Route::get('/login', function(){return 'login';})->name('site.login');
+Route::get('/login', [LoginController::class, 'index'])->name('site.login');
+Route::post('/login', [LoginController::class, 'autenticar'])->name('site.login');
 
-Route::middleware('aut:padrao, admin')->prefix('/app')->group(function () {
+Route::middleware('aut:padrao, admin')->prefix('/app')->group(function (){
     Route::get('/clientes',function(){return 'clientes';})->name('app.clientes');
     Route::get('/fornecedores', function(){return 'fornecedores';})->name('app.fornecedores');
     Route::get('/produtos', function(){return 'produtos';})->name('app.produtos');
