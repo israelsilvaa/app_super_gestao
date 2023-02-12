@@ -12,6 +12,7 @@
             <li><a href="{{ route('curso.modulos') }}">Modulos</a></li>
             <li><a href="{{ route('site.login') }}">Login</a></li>
             <li><a href="#">Cadstrar-se</a></li>
+            <li><a href="{{ route('app.sair') }}">sair</a></li>
         </ul>
     </div>
 </div>

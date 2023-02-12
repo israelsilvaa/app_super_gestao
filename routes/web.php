@@ -43,6 +43,11 @@ Route::middleware('aut')->prefix('/app')->group(function (){
     Route::get('/home',[HomeController::class, 'index'])->name('app.home');
     Route::get('/clientes',[ClienteController::class, 'index'])->name('app.clientes');
     Route::get('/fornecedores',[FornecedorController::class, 'index'])->name('app.fornecedores');
+    Route::get('/adicionar',[FornecedorController::class, 'adicionar'])->name('app.fornecedores.adicionar');
+    Route::post('/fornecedores/listar',[FornecedorController::class, 'listar'])->name('app.fornecedores.listar');
+    
+
+
     Route::get('/produtos', [ProdutoController::class, 'index'])->name('app.produtos');
     Route::get('/sair',[LoginController::class, 'sair'])->name('app.sair');
 });
