@@ -46,6 +46,7 @@ Route::middleware('aut')->prefix('/app')->group(function (){
     Route::get('/adicionar',[FornecedorController::class, 'adicionar'])->name('app.fornecedores.adicionar');
     Route::post('/adicionar',[FornecedorController::class, 'adicionar'])->name('app.fornecedores.adicionar');
     Route::post('/fornecedores/listar',[FornecedorController::class, 'listar'])->name('app.fornecedores.listar');
+    Route::get('/fornecedores/listar',[FornecedorController::class, 'listar'])->name('app.fornecedores.listar');
     Route::get('/fornecedores/editar/{id}/{msg?}',[FornecedorController::class, 'editar'])->name('app.fornecedores.editar');
     
     
