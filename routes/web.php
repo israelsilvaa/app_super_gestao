@@ -52,6 +52,8 @@ Route::middleware('aut')->prefix('/app')->group(function (){
     
 
     Route::get('/produtos', [ProdutoController::class, 'index'])->name('app.produtos');
+    Route::get('/produtos/create', [ProdutoController::class, 'create'])->name('app.produtos.create');
+    Route::resource('produtos', 'ProdutoController');
     Route::get('/sair',[LoginController::class, 'sair'])->name('app.sair');
 });
 
