@@ -51,9 +51,10 @@ Route::middleware('aut')->prefix('/app')->group(function (){
     Route::get('/fornecedores/excluir/{id}',[FornecedorController::class, 'excluir'])->name('app.fornecedores.excluir');
     
 
-    Route::get('/produtos', [ProdutoController::class, 'index'])->name('app.produtos');
-    Route::get('/produtos/create', [ProdutoController::class, 'create'])->name('app.produtos.create');
     Route::resource('produtos', 'ProdutoController');
+    Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.home');
+    Route::get('/produtos/create', [ProdutoController::class, 'create'])->name('app.produtos.create');
+
     Route::get('/sair',[LoginController::class, 'sair'])->name('app.sair');
 });
 
