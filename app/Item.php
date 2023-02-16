@@ -15,9 +15,11 @@ class Item extends Model
         return $this->hasOne('App\ItemDetalhe', 'produto_id', 'id');
 
         // Produto tem um detalhe
-
         // 1 registro relacionado em produto_detalhes (fk) -> produto_id
         // produtos (pk) -> id
+    }
 
+    public function fornecedor(){
+        return $this->belongsTo('App\Fornecedor');
     }
 }
