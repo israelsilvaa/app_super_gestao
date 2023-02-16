@@ -20,4 +20,8 @@ class Fornecedor extends Model
      'email'=>'abc@teste.com']);
     */
     protected $fillable = ['nome', 'site', 'uf', 'email'];
+
+    public function produtos(){
+        return $this->hasMany('App\Item', 'fornecedor_id', 'id');
+    }
 }

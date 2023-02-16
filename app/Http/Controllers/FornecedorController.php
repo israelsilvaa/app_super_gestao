@@ -14,7 +14,7 @@ class FornecedorController extends Controller
 
     public function listar(Request $request)
     {
-        $lista = Fornecedor::where('nome', 'like', '%'.$request->input('nome').'%')
+        $lista = Fornecedor::with(['produtos'])->where('nome', 'like', '%'.$request->input('nome').'%')
         ->where('site', 'like', '%'.$request->input('site').'%')
         ->where('uf', 'like', '%'.$request->input('uf').'%')
         ->where('email', 'like', '%'.$request->input('email').'%')
