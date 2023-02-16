@@ -17,17 +17,17 @@ class ProdutoController extends Controller
     public function index(Request $request)
     {
         $produtos = Produto::paginate(10);
-        foreach($produtos as $key => $produto){
+        // foreach($produtos as $key => $produto){
             
-            $pordutoDetalhe = ProdutoDetalhe::where('produto_id', $produto->id)->first();
-            if (isset($pordutoDetalhe)){
+        //     $pordutoDetalhe = ProdutoDetalhe::where('produto_id', $produto->id)->first();
+        //     if (isset($pordutoDetalhe)){
 
-                $produtos[$key]['comprimento'] = $pordutoDetalhe->comprimento;
-                $produtos[$key]['largura'] = $pordutoDetalhe->largura;
-                $produtos[$key]['altura'] = $pordutoDetalhe->altura;
-            }
-        }
-        
+        //         $produtos[$key]['comprimento'] = $pordutoDetalhe->comprimento;
+        //         $produtos[$key]['largura'] = $pordutoDetalhe->largura;
+        //         $produtos[$key]['altura'] = $pordutoDetalhe->altura;
+        //     }
+        // }
+
         return view('app.produto.index', ['produtos' => $produtos, 'request' => $request->all()]);
     }
 
