@@ -54,6 +54,8 @@ Route::middleware('aut')->prefix('/app')->group(function (){
 
     //produtos
     Route::resource('produtos', 'ProdutoController');
+    //produtos detalhes
+    Route::resource('produtos-detalhes', 'ProdutoDetalheController');
 
 });
 
