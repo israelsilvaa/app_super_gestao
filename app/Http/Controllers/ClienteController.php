@@ -20,7 +20,7 @@ class ClienteController extends Controller
         return view('app.cliente.index' , ['clientes'=>$clientes, 'request'=>$request->all()]);
     
     }
-
+        
     /**
      * Show the form for creating a new resource.
      *
@@ -28,7 +28,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('app.cliente.create'); 
     }
 
     /**
@@ -39,7 +39,21 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $regras = [
+            'nome'=> 'required|min:3|max:40'
+        ];
+        $feedback = [
+            'required'=> 'O campo :attribute é obrigatório',
+            'nome.min'=> 'nome minimo de 3 letras',
+            'nome.max'=> 'nome maximo de 40 letras'
+        ];
+
+        $request->validate($regras, $feedback);
+        $cliente = new Cliente();
+        $cliente->nome = $request->get('nome');
+        $cliente->save();
+        return redirect()->route('cliente.index');
+
     }
 
     /**
