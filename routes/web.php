@@ -41,7 +41,6 @@ Route::post('/login', [LoginController::class, 'autenticar'])->name('site.login'
 
 Route::middleware('aut')->prefix('/app')->group(function (){
     Route::get('/home',[HomeController::class, 'index'])->name('app.home');
-    Route::get('/clientes',[ClienteController::class, 'index'])->name('app.clientes');
     Route::get('/fornecedores',[FornecedorController::class, 'index'])->name('app.fornecedores');
     Route::get('/adicionar',[FornecedorController::class, 'adicionar'])->name('app.fornecedores.adicionar');
     Route::post('/adicionar',[FornecedorController::class, 'adicionar'])->name('app.fornecedores.adicionar');
@@ -56,6 +55,10 @@ Route::middleware('aut')->prefix('/app')->group(function (){
     Route::resource('produtos', 'ProdutoController');
     //produtos detalhes
     Route::resource('produto-detalhe', 'ProdutoDetalheController');
+    
+    Route::resource('cliente', 'ClienteController');
+    Route::resource('pedido', 'PedidoController');
+    Route::resource('pedido-produto', 'PedidoProdutoController');
 
 });
 
