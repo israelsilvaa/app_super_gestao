@@ -11,7 +11,8 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\PedidoProdutoController;
+use App\PedidoProduto;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,8 +59,9 @@ Route::middleware('aut')->prefix('/app')->group(function (){
     
     Route::resource('cliente', 'ClienteController');
     Route::resource('pedido', 'PedidoController');
-    Route::resource('pedido-produto', 'PedidoProdutoController');
-
+    //Route::resource('pedido-produto', 'PedidoProdutoController');
+    route::get('pedido-produto/create/{pedido}', [PedidoProdutoController::class, 'create'])->name('pedido-produto.create');
+    route::post('pedido-produto/store/{pedido}', [PedidoProdutoController::class, 'store'])->name('pedido-produto.store');
 });
 
 Route::prefix('/curso')->group(function () {

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pedido;
+use App\Produto;
 
 class PedidoProdutoController extends Controller
 {
@@ -21,9 +23,10 @@ class PedidoProdutoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Pedido $pedido)
     {
-        //
+        $produtos = Produto::all();
+        return view('app.pedido_produto.create', ['pedido' => $pedido, 'produtos' => $produtos]);
     }
 
     /**
@@ -32,9 +35,23 @@ class PedidoProdutoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Pedido $pedido)
     {
-        //
+
+        // $regras = [
+        //     'produto_id' => 'exists:produtos,id'
+        // ];
+
+        // $feedback = [
+        //     'produto_id.exists' => 'O produto informado não existe'
+        // ];
+        // $request->validate($regras, $feedback);
+        echo '<pre>';
+        print_r($pedido);
+        echo '</pre>';
+        echo '<pre>';
+        print_r($request->all());
+        echo '</pre>';
     }
 
     /**
