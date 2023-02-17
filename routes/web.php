@@ -63,7 +63,9 @@ Route::middleware('aut')->prefix('/app')->group(function (){
     //Route::resource('pedido-produto', 'PedidoProdutoController');
     route::get('pedido-produto/create/{pedido}', [PedidoProdutoController::class, 'create'])->name('pedido-produto.create');
     route::post('pedido-produto/store/{pedido}', [PedidoProdutoController::class, 'store'])->name('pedido-produto.store');
-    Route::delete('pedido-produto.destroy/{pedido}/{produto}',[PedidoProdutoController::class, 'destroy'])->name('pedido-produto.destroy');
+    // Route::delete('pedido-produto.destroy/{pedido}/{produto}',[PedidoProdutoController::class, 'destroy'])->name('pedido-produto.destroy');
+    Route::delete('pedido-produto.destroy/{pedidoProduto}/{pedido_id}',[PedidoProdutoController::class, 'destroy'])->name('pedido-produto.destroy');
+    
 });
 
 Route::prefix('/curso')->group(function () {
